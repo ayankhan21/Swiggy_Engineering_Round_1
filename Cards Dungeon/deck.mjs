@@ -14,7 +14,6 @@ const deck = [
   { suit: "Hearts", rank: 'jack', action: "+4" },
 
   
-  { suit: "Diamond", rank: 1, action: null },
   { suit: "Diamond", rank: 2, action: null },
   { suit: "Diamond", rank: 3, action: null },
   { suit: "Diamond", rank: 4, action: null },
@@ -30,7 +29,6 @@ const deck = [
   { suit: "Diamond", rank: 'jack', action: "+4" },
 
 
-  { suit: "Clubs", rank: 1, action: null },
   { suit: "Clubs", rank: 2, action: null },
   { suit: "Clubs", rank: 3, action: null },
   { suit: "Clubs", rank: 4, action: null },
@@ -46,7 +44,6 @@ const deck = [
   { suit: "Clubs", rank: 'jack', action: "+4" },
 
 
-  { suit: "Spades", rank: 1, action: null },
   { suit: "Spades", rank: 2, action: null },
   { suit: "Spades", rank: 3, action: null },
   { suit: "Spades", rank: 4, action: null },
