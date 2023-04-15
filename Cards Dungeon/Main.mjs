@@ -134,9 +134,9 @@ function startGame(players) {
               break;
             }
           }
+          break;
         }
       }
-      // playedCard = true;
       if(!playedCard) {
       console.log(`${currentPlayer.name} has to draw a card`);
       let card = drawPile.pop();
