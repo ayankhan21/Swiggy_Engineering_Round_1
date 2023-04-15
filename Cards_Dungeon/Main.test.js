@@ -1,11 +1,6 @@
-import {canPlayCard,drawCards,getNextPlayerIndex} from './Main'
+import canPlayCard, {drawCards,getNextPlayerIndex} from './Main'
 
-
-// test('canPlayCard returns true for a playable card', () => {
-//     const topCard = { suit: 'hearts', rank: '10' };
-//     const card = { suit: 'hearts', rank: '8' };
-//     expect(canPlayCard(card, topCard)).toBe(true);
-//   });
+  //canPlayCard
 
 describe('canPlayCard function', () => {
     const topCard = { rank: '7', suit: 'hearts' };
@@ -29,11 +24,10 @@ describe('canPlayCard function', () => {
     });
   });
 
-
-  // getnextindex
+  // getNextPlayerIndex
 
   describe('getNextPlayerIndex', () => {
-    test('should return the correct next player index when direction is 1', () => {
+    test('Should return the correct next player index when direction is 1', () => {
       const currentPlayerIndex = 0;
       const direction = 1;
       const expected = 1;
@@ -41,7 +35,7 @@ describe('canPlayCard function', () => {
       expect(result).toEqual(expected);
     });
   
-    test('should return the correct next player index when direction is -1', () => {
+    test('Should return the correct next player index when direction is -1', () => {
       const currentPlayerIndex = 0;
       const direction = -1;
       const expected = 3;
@@ -49,7 +43,7 @@ describe('canPlayCard function', () => {
       expect(result).toEqual(expected);
     });
   
-    test('should handle the last player index correctly when direction is 1', () => {
+    test('Should handle the last player index correctly when direction is 1', () => {
       const currentPlayerIndex = 3;
       const direction = 1;
       const expected = 0;
@@ -57,7 +51,7 @@ describe('canPlayCard function', () => {
       expect(result).toEqual(expected);
     });
   
-    test('should handle the last player index correctly when direction is -1', () => {
+    test('Should handle the last player index correctly when direction is -1', () => {
       const currentPlayerIndex = 3;
       const direction = -1;
       const expected = 2;
@@ -81,7 +75,7 @@ describe('canPlayCard function', () => {
       ];
     });
   
-    test('should add the specified number of cards to the player\'s hand', () => {
+    test('Should add the specified number of cards to the player\'s hand', () => {
       const index = 0;
       const number = 2;
   
@@ -90,7 +84,7 @@ describe('canPlayCard function', () => {
       expect(players[index].hand.length).toBe(number);
     });
   
-    test('should add cards with valid suits and ranks to the player\'s hand', () => {
+    test('Should add cards with valid suits and ranks to the player\'s hand', () => {
       const index = 1;
       const number = 1;
   

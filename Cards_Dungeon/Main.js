@@ -36,7 +36,7 @@ export function drawCards(index, number) {
 }
 
 // Check to see if a player can play a card or not
-export function canPlayCard(card, topCard) {
+export default function canPlayCard(card, topCard) {
   if (card.suit === topCard.suit) {
     return true;
   }
@@ -140,7 +140,7 @@ export function startGame(players) {
           break;
         }
       }
-      if (!playedCard) {
+      if (!playedCard) { // If no cards can be played , the player has to take one from the Draw Pile
         console.log(`${currentPlayer.name} has to draw a card`);
         let card = drawPile.pop();
         currentPlayer.hand.push(card);
@@ -154,4 +154,3 @@ export function startGame(players) {
 }
 
 startGame(players);
-
