@@ -2,7 +2,7 @@ import shuffledDeck from "./deck.js";
 
 let deckCopy = [...shuffledDeck];
 
-let numOfPlayers = 4;
+const numOfPlayers = 4;
 // Can be changed and maximum upto 4 Players
 
 //Initializing the players Array
@@ -24,10 +24,10 @@ for (let i in players) {
   }
 }
 
-// Remaining cards after distributing to each 5 cards to each player
+// Remaining cards are kept as a draw pile after distributing to each 5 cards to each player
 let drawPile = [...deckCopy];
 
-// Gives cards to players according to the index and number ( either +2 or +4 )
+// Gives cards to players according to the index and number ( for +2 or +4 )
 export function drawCards(index, number) {
   for (let i = 0; i < number; i++) {
     let someCard = distributeCard(deckCopy);
@@ -46,6 +46,7 @@ export default function canPlayCard(card, topCard) {
   return false;
 }
 
+// Returns next index according to the direction 
 export function getNextPlayerIndex(currentPlayerIndex, direction) {
   if (direction === 1) {
     return (currentPlayerIndex + 1) % players.length;
@@ -58,7 +59,7 @@ export function startGame(players) {
   let direction = 1; // Normal Rotation
   let currentPlayerIndex = 0;
   let playPile = [];
-  playPile.push(drawPile.pop());  // Initial Card from the DrawPile to start the game with
+  playPile.push(drawPile.pop()); // Initial Card from the DrawPile to start the game with
   let topCard = playPile[playPile.length - 1];
 
   while (true) {
@@ -94,17 +95,17 @@ export function startGame(players) {
           console.log(
             `${currentPlayer.name} has played ${card.rank} of ${card.suit}`
           );
-          playedCard = true;
+          playedCard = true; // Exactly 1 card to be played per player
           // In case of any action cards performs a switch
           switch (card.rank) {
             case "ace": {
-              console.log(
-                getNextPlayerIndex(currentPlayerIndex, direction),
-                "is skipped"
-              );
               currentPlayerIndex = getNextPlayerIndex(
                 currentPlayerIndex,
                 direction
+              );
+              console.log(
+                getNextPlayerIndex(currentPlayerIndex, direction),
+                "is skipped"
               );
               break;
             }
@@ -140,7 +141,8 @@ export function startGame(players) {
           break;
         }
       }
-      if (!playedCard) { // If no cards can be played , the player has to take one from the Draw Pile
+      if (!playedCard) {
+        // If no cards can be played , the player has to take one from the Draw Pile
         console.log(`${currentPlayer.name} has to draw a card`);
         let card = drawPile.pop();
         currentPlayer.hand.push(card);
@@ -148,7 +150,7 @@ export function startGame(players) {
     }
 
     // Makes sure the next Index is traversed according to the Direction of play
-    // Direction is used to switch the rotation of gameplay
+    // Direction is used to switch the rotation of gameplay ( 1 default , -1 to reverse )
     currentPlayerIndex = getNextPlayerIndex(currentPlayerIndex, direction);
   }
 }

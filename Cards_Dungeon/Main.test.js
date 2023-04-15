@@ -5,19 +5,19 @@ import canPlayCard, {drawCards,getNextPlayerIndex} from './Main'
 describe('canPlayCard function', () => {
     const topCard = { rank: '7', suit: 'hearts' };
     
-    it('should return true when the card has the same suit as the top card', () => {
+    it('Should return true when the card has the same suit as the top card', () => {
       const card = { rank: '10', suit: 'hearts' };
       const result = canPlayCard(card, topCard);
       expect(result).toBe(true);
     });
   
-    it('should return true when the card has the same rank as the top card', () => {
+    it('Should return true when the card has the same rank as the top card', () => {
       const card = { rank: '7', suit: 'clubs' };
       const result = canPlayCard(card, topCard);
       expect(result).toBe(true);
     });
   
-    it('should return false when the card has a different rank and suit from the top card', () => {
+    it('Should return false when the card has a different rank and suit from the top card', () => {
       const card = { rank: '2', suit: 'diamonds' };
       const result = canPlayCard(card, topCard);
       expect(result).toBe(false);
