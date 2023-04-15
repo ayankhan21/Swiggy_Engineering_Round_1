@@ -43,6 +43,11 @@ NOTE: Actions are not stackable i.e. if Q is played by player 1 then player two 
 - Simply run the Main.js which already has the startGame() ready and running
 - The number of players is set to 4 , you can change it to anything in the range or ( min of 2) to (max of 2).
 
+# Game flow :
+
+![Game Flow](./Cards_Dungeon/assets/swig1.png "Cards Dungeon")
+![Game Flow](./Cards_Dungeon//assets/swig2.png "Cards Dungeon")
+
 # Author
 
 - [Ayan Khan](https://github.com/ayankhan21)

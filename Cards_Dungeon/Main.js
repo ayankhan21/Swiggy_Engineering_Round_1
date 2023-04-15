@@ -56,6 +56,12 @@ export function getNextPlayerIndex(currentPlayerIndex, direction) {
 }
 
 export function startGame(players) {
+
+  // Making sure the number of players in in the range of min(2) and max(4)
+  if (players.length < 2 || players.length > 4) {
+    throw new Error("Number of players must be between 2 and 4");
+  }
+
   let direction = 1; // Normal Rotation
   let currentPlayerIndex = 0;
   let playPile = [];
