@@ -1,0 +1,23 @@
+{
+  "name": "swiggy_coding_round",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A classic Uno card game but with a twist , no uno cards here , instead a standard deck of 52 cards is what you'll be playing with.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayankhan21/Swiggy_coding_round.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayankhan21/Swiggy_coding_round/issues"
+  },
+  "homepage": "https://github.com/ayankhan21/Swiggy_coding_round#readme",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
